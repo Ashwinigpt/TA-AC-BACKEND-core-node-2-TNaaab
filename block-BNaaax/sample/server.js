@@ -1,10 +1,7 @@
-var path = requires('path');
+console.log(__dirname);
 
-var absolutePath = __dirname;
-var relativePath = './server.js'
+console.log(__filename);
 
-console.log(absolutePath);
-
-console.log(relativePath);
-
+var path = require('path');
 var formPath = path.join(__dirname, 'server.js');
+console.log(formPath);
