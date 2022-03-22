@@ -4,8 +4,10 @@ let fs = require('fs');
 let server = http.createServer(handleRequest);
 
 function handleRequest(req, res) {
-    if (req.method === 'GET' && req.url === '/') {
-        res.setHeader('Content-Type', 'text/html');
-        fs.createReadStream('./readme.txt').pipe(res);
-    }
+    res.setHeader('Content-Type', 'text/plain');
+    fs.createReadStream('./readme.txt').pipe(res);
 }
+
+server.listen(4000, () => {
+    console.log('server listening on port 4000 ');
+})
