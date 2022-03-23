@@ -8,7 +8,8 @@ function handleRequest(req, res) {
         store = store + chunk;
     });
     req.on('end', () => {
-        console.log(store);
+        res.write(store);
+        res.end();
     })
 }
 
